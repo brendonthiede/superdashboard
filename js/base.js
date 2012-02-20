@@ -17,7 +17,7 @@ var superdashboard = (function() {
 				if (!isAlertShowing) {
 					$("#sirenDiv").show();
 					isAlertShowing = true;
-					playSound("audio/pchick-alarm.wav", 4);
+					playRepeatingSound("alarmAudioPlayer", 4);
 				}
 			} else {
 				if (isAlertShowing) {
@@ -28,11 +28,17 @@ var superdashboard = (function() {
 			setTimeout("superdashboard.alerts.checkForAlert();", 2000);
 		}
 		
-		var playSound = function(url, count) {
-//			for (var i = 0; i < count; i++) {
-				//$("#sound").html("<embed type='audio/x-wav' src='"+url+"' hidden=true autostart=true loop=false />");
-				document.getElementById('alarmAudioPlayer').play();
-//			}
+		var playRepeatingSound = function(playerName, count) {
+			audioCount = count;
+			playSound(playerName);
+		};
+		
+		var playSound = function(playerName) {
+			document.getElementById('alarmAudioPlayer').play();
+			audioCount--;
+			if (audioCount > 0) {
+				setTimeout("superdashboard.alerts.playSound('" + playerName + "');", 2200);
+			}
 		};
 		
 		var snooze = function() {
@@ -41,7 +47,8 @@ var superdashboard = (function() {
 
 		return {
 			checkForAlert: checkForAlert,
-			snooze: snooze
+			snooze: snooze,
+			playSound: playSound
 		};
 	})();
 
