@@ -17,7 +17,7 @@ var superdashboard = (function() {
 				if (!isAlertShowing) {
 					$("#sirenDiv").show();
 					isAlertShowing = true;
-					bindKeypressToPause();
+					bindKeypressToSnooze();
 					playRepeatingSound("alarmAudioPlayer", 4);
 				}
 			} else {
@@ -30,7 +30,7 @@ var superdashboard = (function() {
 			setTimeout("superdashboard.alerts.checkForAlert();", 2000);
 		}
 		
-		var bindKeypressToPause = function() {
+		var bindKeypressToSnooze = function() {
 			$(document).keypress(function() {
 				superdashboard.alerts.snooze();
 				$(this).removeAttr("keypress");
