@@ -24,7 +24,10 @@ superdashboard.slider = (function() {
 			sliderIndex = index;
 		}
 		$("#sliderCount").text((sliderIndex + 1) + '/' + sliderCount);
-		$("div.slide").eq(sliderIndex).css('height', '0').css('z-index', 30).animate({height: '100%'}, 1500);
+		$("div.slide").eq(sliderIndex)
+			.css('height', '0')
+			.css('z-index', 30)
+			.animate({height: '100%'}, 1500);
 	}
 	
 	// public functions
@@ -34,13 +37,15 @@ superdashboard.slider = (function() {
 			autoSlideDuration = duration;
 		}
 		showNext();
-		$("#startStopSlider").html("<a href='#' onClick='superdashboard.slider.stopSlider();'>Manual</a>");
+		$("#autoSlideControl").hide();
+		$("#manualSlideControl").show();
 	}
 	
 	function stopSlider() {
 		clearTimeout(sliderTimer);
 		isAutoSlide = false;
-		$("#startStopSlider").html("<a href='#' onClick='superdashboard.slider.startSlider();'>Auto</a>");
+		$("#manualSlideControl").hide();
+		$("#autoSlideControl").show();
 	}
 	
 	function showNext() {
