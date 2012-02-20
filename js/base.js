@@ -17,16 +17,25 @@ var superdashboard = (function() {
 				if (!isAlertShowing) {
 					$("#sirenDiv").show();
 					isAlertShowing = true;
+					bindKeypressToPause();
 					playRepeatingSound("alarmAudioPlayer", 4);
 				}
 			} else {
 				if (isAlertShowing) {
 					$("#sirenDiv").hide();
 					isAlertShowing = false;
+					$(this).removeAttr("keypress");
 				}
 			}
 			setTimeout("superdashboard.alerts.checkForAlert();", 2000);
 		}
+		
+		var bindKeypressToPause = function() {
+			$(document).keypress(function() {
+				superdashboard.alerts.snooze();
+				$(this).removeAttr("keypress");
+			});
+		};
 		
 		var playRepeatingSound = function(playerName, count) {
 			audioCount = count;
