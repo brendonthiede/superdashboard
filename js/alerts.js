@@ -2,11 +2,11 @@ superdashboard.alerts = (function() {
 	var isAlertShowing = false;
 	var audioCount = 0;
 
-	var isAlertExists = function() {
+	function isAlertExists() {
 		return $("#buildError").is(":checked");
-	};
+	}
 
-	var checkForAlert = function() {
+	function checkForAlert() {
 		if (isAlertExists()) {
 			if (!isAlertShowing) {
 				$("#sirenDiv").show();
@@ -24,29 +24,29 @@ superdashboard.alerts = (function() {
 		setTimeout("superdashboard.alerts.checkForAlert();", 2000);
 	}
 	
-	var bindKeypressToSnooze = function() {
+	function bindKeypressToSnooze() {
 		$(document).keypress(function() {
 			superdashboard.alerts.snooze();
 			$(this).removeAttr("keypress");
 		});
-	};
+	}
 	
-	var playRepeatingSound = function(playerName, count) {
+	function playRepeatingSound(playerName, count) {
 		audioCount = count;
 		playSound(playerName);
-	};
+	}
 	
-	var playSound = function(playerName) {
+	function playSound(playerName) {
 		document.getElementById('alarmAudioPlayer').play();
 		audioCount--;
 		if (audioCount > 0) {
 			setTimeout("superdashboard.alerts.playSound('" + playerName + "');", 2200);
 		}
-	};
+	}
 	
-	var snooze = function() {
+	function snooze() {
 		$("#sirenDiv").hide();
-	};
+	}
 
 	return {
 		checkForAlert: checkForAlert,
