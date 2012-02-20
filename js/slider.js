@@ -1,7 +1,7 @@
 superdashboard.slider = (function() {
 	var isInitialized = false;
-	var sliderTimer = null;
 	var isAutoSlide = false;
+	var sliderTimer = null;
 	var autoSlideDuration = 5000;
 	var sliderIndex = 0;
 	var sliderCount = 0;
