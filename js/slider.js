@@ -15,7 +15,7 @@ superdashboard.slider = (function() {
 	
 	function transitionSlide(index) {
 		$("div.slide").css('z-index', 10);
-		$("div.slide").eq(sliderIndex).css('z-index', 20);
+		$("#slideDiv" + sliderIndex).css('z-index', 20);
 		if (index >= sliderCount) {
 			sliderIndex = 0;
 		} else if (index < 0) {
@@ -24,7 +24,7 @@ superdashboard.slider = (function() {
 			sliderIndex = index;
 		}
 		$("#sliderCount").text((sliderIndex + 1) + '/' + sliderCount);
-		$("div.slide").eq(sliderIndex)
+		$("#slideDiv" + sliderIndex)
 			.css('height', '0')
 			.css('z-index', 30)
 			.animate({height: '100%'}, 1500);
