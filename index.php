@@ -10,12 +10,15 @@
 			$(document).ready(function() {
 				superdashboard.alerts.checkForAlert();
 				superdashboard.slider.showNext();
+				setInterval(function() {
+					$("#bambooPlans").load('bamboo.php');
+				}, 5000);
 			});
 		</script>
 	</head>
 	<body>
 		<?php include("includes/slider.inc"); ?>
-		<?php include("bamboo.php"); ?>
+		<div id="bambooPlans"><?php include("bamboo.php"); ?></div>
 		<?php include("includes/alarmAudio.inc"); ?>
 		<?php include("includes/alarmVisual.inc"); ?>
 		<!-- Temporary checkbox for testing out alarm capabilities -->

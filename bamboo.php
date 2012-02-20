@@ -1,4 +1,3 @@
-<div id="bambooPlans">
 <?php
 	include('includes/common.inc');
 	$cfg = fopen (dirname(__FILE__)."\\config\\bambooPlanList.cfg", "r");
@@ -18,4 +17,3 @@
 	}
 	fclose ($cfg);
 ?>
-</div>
