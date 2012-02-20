@@ -15,6 +15,7 @@
 	</head>
 	<body>
 		<?php include("includes/slider.inc"); ?>
+		<?php include("bamboo.php"); ?>
 		<?php include("includes/alarmAudio.inc"); ?>
 		<?php include("includes/alarmVisual.inc"); ?>
 		<!-- Temporary checkbox for testing out alarm capabilities -->
