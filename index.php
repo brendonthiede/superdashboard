@@ -5,6 +5,7 @@
         <script type="text/javascript" src="js/jquery1.7.1.min.js"></script>
         <script type="text/javascript" src="js/base.js"></script>
         <script type="text/javascript" src="js/alerts.js"></script>
+        <script type="text/javascript" src="js/slider.js"></script>
         <script type="text/javascript">
         	$(document).ready(function() {
         		superdashboard.alerts.checkForAlert();
