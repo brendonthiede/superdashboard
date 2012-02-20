@@ -3,7 +3,7 @@ superdashboard.alerts = (function() {
 	var audioCount = 0;
 
 	function isAlertExists() {
-		return $("#buildError").is(":checked");
+		return ($("#buildError").is(":checked")||$("#bambooPlans").find("div.failed").length);
 	}
 
 	function checkForAlert() {
