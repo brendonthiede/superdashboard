@@ -13,14 +13,6 @@ superdashboard.slider = (function() {
 		isInitialized = true;
 	}
 	
-	function transitionForward() {
-		transitionSlide(sliderIndex + 1);
-	}
-	
-	function transitionBackward() {
-		transitionSlide(sliderIndex - 1);
-	}
-	
 	function transitionSlide(index) {
 		$("div.slide").css('z-index', 10);
 		$("div.slide").eq(sliderIndex).css('z-index', 20);
@@ -55,7 +47,7 @@ superdashboard.slider = (function() {
 		if (!isInitialized) {
 			init();
 		}
-		transitionForward();
+		transitionSlide(sliderIndex + 1);
 		if (isAutoSlide) {
 			sliderTimer = setTimeout("superdashboard.slider.showNext();", autoSlideDuration);
 		}
@@ -65,7 +57,7 @@ superdashboard.slider = (function() {
 		if (!isInitialized) {
 			init();
 		}
-		transitionBackward();
+		transitionSlide(sliderIndex - 1);
 	}
 	
 	return {
