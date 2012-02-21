@@ -9,6 +9,7 @@ superdashboard.alerts = (function() {
 	function checkForAlert() {
 		if (isAlertExists()) {
 			if (!isAlertShowing) {
+				$("#sliderContainer").hide();
 				$("#sirenDiv").show();
 				isAlertShowing = true;
 				bindKeypressToSnooze();
@@ -17,6 +18,7 @@ superdashboard.alerts = (function() {
 		} else {
 			if (isAlertShowing) {
 				$("#sirenDiv").hide();
+				$("#sliderContainer").show();
 				isAlertShowing = false;
 				$(this).removeAttr("keypress");
 			}
@@ -46,6 +48,7 @@ superdashboard.alerts = (function() {
 	
 	function snooze() {
 		$("#sirenDiv").hide();
+		$("#sliderContainer").show();
 	}
 
 	return {

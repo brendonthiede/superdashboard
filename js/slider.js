@@ -2,20 +2,21 @@ superdashboard.slider = (function() {
 	var isInitialized = false;
 	var isAutoSlide = false;
 	var sliderTimer = null;
-	var autoSlideDuration = 5000;
-	var sliderIndex = 0;
+	var autoSlideDuration = 3500;
+	var sliderIndex = -1;
 	var sliderCount = 0;
 	
 	// private functions
 	function init() {
 		sliderCount = $("div.slide").length;
-		sliderIndex = sliderCount - 1;
 		isInitialized = true;
 	}
 	
 	function transitionSlide(index) {
-		$("div.slide").css('z-index', 10);
-		$("#slideDiv" + sliderIndex).css('z-index', 20);
+		if (!isInitialized) {
+			init();
+		}
+		$("#slideDiv" + sliderIndex).hide();
 		if (index >= sliderCount) {
 			sliderIndex = 0;
 		} else if (index < 0) {
@@ -24,10 +25,7 @@ superdashboard.slider = (function() {
 			sliderIndex = index;
 		}
 		$("#sliderCount").text((sliderIndex + 1) + '/' + sliderCount);
-		$("#slideDiv" + sliderIndex)
-			.css('height', '0')
-			.css('z-index', 30)
-			.animate({height: '100%'}, 1500);
+		$("#slideDiv" + sliderIndex).show();
 	}
 	
 	// public functions
@@ -49,9 +47,6 @@ superdashboard.slider = (function() {
 	}
 	
 	function showNext() {
-		if (!isInitialized) {
-			init();
-		}
 		transitionSlide(sliderIndex + 1);
 		if (isAutoSlide) {
 			sliderTimer = setTimeout("superdashboard.slider.showNext();", autoSlideDuration);
@@ -59,9 +54,6 @@ superdashboard.slider = (function() {
 	}
 	
 	function showPrevious() {
-		if (!isInitialized) {
-			init();
-		}
 		transitionSlide(sliderIndex - 1);
 	}
 	
