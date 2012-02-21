@@ -6,15 +6,6 @@
 		<script type="text/javascript" src="js/base.js"></script>
 		<script type="text/javascript" src="js/alerts.js"></script>
 		<script type="text/javascript" src="js/slider.js"></script>
-		<script type="text/javascript">
-			$(document).ready(function() {
-				superdashboard.alerts.checkForAlert();
-				superdashboard.slider.showNext();
-				setInterval(function() {
-					$("#bambooPlans").load('bamboo.php');
-				}, 5000);
-			});
-		</script>
 	</head>
 	<body>
 		<?php include("includes/slider.inc"); ?>

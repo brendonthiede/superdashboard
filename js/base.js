@@ -9,3 +9,13 @@ var superdashboard = (function() {
 		slider: null
 	};	
 })();
+
+$(document).ready(function() {
+	superdashboard.alerts.checkForAlert();
+	superdashboard.slider.showNext();
+	if ($("#bambooPlans").find("img").length > 0) {
+		setInterval(function() {
+			$("#bambooPlans").load('bamboo.php');
+		}, 5000);
+	}
+});
