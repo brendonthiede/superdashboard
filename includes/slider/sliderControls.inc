@@ -5,7 +5,7 @@
 			<a href='#' onClick='superdashboard.slider.showPrevious()'>&lt;&lt;</a>
 		</td>
 		<td>
-			<a id="autoSlideControl" href='#' onClick='superdashboard.slider.startSlider(5000);'>Auto</a>
+			<a id="autoSlideControl" href='#' onClick='superdashboard.slider.startSlider(3500);'>Auto</a>
 			<a id="manualSlideControl" style="display: none;" href='#' onClick='superdashboard.slider.stopSlider();'>Manual</a>
 		</td>
 		<td><div id="sliderCount">0/0</div></td>
