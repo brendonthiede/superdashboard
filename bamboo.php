@@ -1,6 +1,6 @@
 <?php
 	include('includes/common.inc');
-	$cfg = fopen (dirname(__FILE__)."\\config\\bambooPlanList.cfg", "r");
+	$cfg = fopen (dirname(__FILE__)."/config/bambooPlanList.cfg", "r");
 	$index = 0;
 	$badDomains = array();
 	while ($url = trim(fgets($cfg))) {
