@@ -14,6 +14,6 @@
 		<?php include("includes/alarmVisual.inc"); ?>
 		<?php include("includes/clock.inc"); ?>
 		<!-- Temporary checkbox for testing out alarm capabilities -->
-		<div id="systemStatusDiv" style="position: relative; top: 0; left: 0;"><input id="buildError" type="checkbox" />Build Error</div>
+		<div id="systemStatusDiv" style="position: relative; top: 0; left: 0;"><input id="buildError" type="checkbox" /><label for="buildError">Build Error</label></div>
 	</body>
 </html>
