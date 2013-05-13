@@ -15,7 +15,7 @@ $(document).ready(function() {
 	superdashboard.slider.showNext();
 	if ($("#bambooPlans").find("img").length > 0) {
 		setInterval(function() {
-			$("#bambooPlans").load('bamboo.php');
+			$("#bambooPlans").load('includes/bamboo.php');
 		}, 5000);
 	}
 });

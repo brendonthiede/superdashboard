@@ -9,7 +9,7 @@
 	</head>
 	<body>
 		<?php include("includes/slider.inc"); ?>
-		<div id="bambooPlans"><?php include("bamboo.php"); ?></div>
+		<div id="bambooPlans"><?php include("includes/bamboo.php"); ?></div>
 		<?php include("includes/alarmAudio.inc"); ?>
 		<?php include("includes/alarmVisual.inc"); ?>
 		<?php include("includes/clock.inc"); ?>
