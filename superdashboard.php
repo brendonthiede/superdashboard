@@ -2,7 +2,7 @@
 	<head>
 		<title>Super Dashboard</title>
 		<link href="css/base.css" rel="stylesheet" type="text/css" />
-		<script type="text/javascript" src="js/jquery1.7.1.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 		<script type="text/javascript" src="js/base.js"></script>
 		<script type="text/javascript" src="js/alerts.js"></script>
 		<script type="text/javascript" src="js/slider.js"></script>
